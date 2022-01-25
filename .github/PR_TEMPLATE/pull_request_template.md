@@ -1,6 +1,4 @@
 # <!--- Branch -->
-
-# About
 <!--- Describe your changes in detail -->
 
 ## Details
