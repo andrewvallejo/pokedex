@@ -4,7 +4,7 @@ An application that allows you to search for other robots from your school. You 
 
 ## Chunkers Frontend Tech Challenge
 
-> "The goal of this assessment is to replicate the frontend application below as close as possible."
+> "The goal of this assessment is to replicate the frontend applicationgit c below as close as possible."
 
 The project is broken into five parts, each with a feature and a wireframe that I meant to replicate from the instructions provided. I have chosen to use React as my framework as well as utilizing other technologies such as Redux and Tailwind CSS.
 
