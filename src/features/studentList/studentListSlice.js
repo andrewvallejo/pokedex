@@ -1,3 +1,8 @@
+/** studentList |  studentListSlice | Reducer
+ * @description: Add list of students to the store
+* @actions: studentsLoading, setStudents
+*/
+
 import {createSlice} from '@reduxjs/toolkit'
 
 const studentListSlice = createSlice({
