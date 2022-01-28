@@ -1,8 +1,13 @@
+/** app |  store
+* @reducers: studentList
+* @api: apiSlice
+* @description: Student Store with reducers and api
+*/
+
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import {setupListeners} from '@reduxjs/toolkit/query'
-import {studentsApi} from '../services/studentsApi'
-
-import studentListReducer from '../features/studentReducer/studentListSlice'
+import {apiSlice} from '../features/api/apiSlice'
+import studentListReducer from '../features/studentList/studentListSlice'
 
 const rootReducer = combineReducers({
 	studentList: studentListReducer
@@ -11,9 +16,9 @@ const rootReducer = combineReducers({
 export const store = configureStore({
 	reducer: {
 		reducer: rootReducer,
-		[studentsApi.reducerPath]: studentsApi.reducer
+		[apiSlice.reducerPath]: apiSlice.reducer
 	},
-	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(studentsApi.middleware)
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
 })
 
 setupListeners(store.dispatch)
