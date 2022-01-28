@@ -1,9 +1,9 @@
-import {StudentList} from './features/studentList/StudentList'
+import {List} from './features/studentList/List'
 
 export const App = () => {
 	return (
-		<main>
-			<StudentList />
+		<main className='h-screen flex flex-col justify-center items-center'>
+			<List />
 		</main>
 	)
 }
