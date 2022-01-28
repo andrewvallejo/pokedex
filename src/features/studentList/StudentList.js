@@ -8,6 +8,9 @@ import {useGetStudentsQuery} from '../api/apiSlice'
 
 export const StudentList = () => {
 	const {data, isLoading, isError} = useGetStudentsQuery()
+
+	if (isLoading) return <p>Loading...</p>
+	if (isError) return <p>Error :(</p>
 	const students = data.students
 
 	const getAverage = (grades) => {
@@ -19,9 +22,6 @@ export const StudentList = () => {
 
 		return <p>{average}</p>
 	}
-
-	if (isLoading) return <p>Loading...</p>
-	if (isError) return <p>Error :(</p>
 
 	return (
 		<ul>
