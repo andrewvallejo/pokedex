@@ -1,17 +1,13 @@
-/* ==========================================================================
-  api | Assessment API | getStudents
-========================================================================== */
-/**
+/** api |  apiSlice | getStudents
 * @method: GET
 * @url: https://api.hatchways.io/assessment/students
 * @description: Get all students
 * @return: Array of students
 */
 
-// TODO: Make sure to remove the student's city since its not needed
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-export const studentsApi = createApi({
-	reducerPath: 'studentApi',
+export const apiSlice = createApi({
+	reducerPath: 'apiSlice',
 	baseQuery: fetchBaseQuery({
 		baseUrl: 'https://api.hatchways.io/assessment'
 	}),
@@ -21,4 +17,4 @@ export const studentsApi = createApi({
 		})
 	})
 })
-export const {useGetStudentsQuery} = studentsApi
+export const {useGetStudentsQuery} = apiSlice
