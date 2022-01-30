@@ -31,7 +31,7 @@ export const List = () => {
 	return (
 		<section className='bg-white min-w-10 w-4/5 h-3/4 rounded-lg shadow-md overflow-auto'>
 			<nav className='px-2 min-w-full'>
-				<SearchBar queryType='name' />
+				<SearchBar searchType='name' choices={data.students} />
 			</nav>
 			<ul className='divide-y'>{students}</ul>)
 		</section>
