@@ -4,6 +4,7 @@
 */
 
 import React from 'react'
+import {SearchBar} from '../../components/SearchBar'
 import {useGetStudentsQuery} from '../api/apiSlice'
 import {Student} from './Student'
 
@@ -27,5 +28,12 @@ export const List = () => {
 		return <Student student={student} average={getAverage(student.grades)} />
 	})
 
-	return <ul className='bg-white min-w-10 w-2/3 h-4/5 rounded-lg shadow-md overflow-auto'>{students}</ul>
+	return (
+		<section className='bg-white min-w-10 w-4/5 h-3/4 rounded-lg shadow-md overflow-auto'>
+			<nav className='px-2 min-w-full'>
+				<SearchBar queryType='name' />
+			</nav>
+			<ul className='divide-y'>{students}</ul>)
+		</section>
+	)
 }
