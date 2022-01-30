@@ -1,9 +1,11 @@
-import {List} from './features/studentList/List'
+import {Routes} from 'react-router-dom'
+import {Route} from 'react-router-dom'
+import {StudentPage} from './components/StudentPage'
 
 export const App = () => {
 	return (
-		<main className='h-screen flex flex-col justify-center items-center'>
-			<List />
-		</main>
+		<Routes>
+			<Route path='/' element={<StudentPage />} />
+		</Routes>
 	)
 }
