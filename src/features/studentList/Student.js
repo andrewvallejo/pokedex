@@ -1,6 +1,6 @@
 export const Student = ({student, average}) => {
 	return (
-		<li className='flex flex-wrap py-2 px-4 border-y border-gray-200'>
+		<li className='flex flex-wrap py-2 px-4 '>
 			<img className='rounded-full border-black border w-32 h-32' src={student.pic} alt={student.firstName} />
 			<div className='px-5'>
 				<h2 className='font-bold uppercase text-4xl '>
