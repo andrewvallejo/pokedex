@@ -6,10 +6,11 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const studentListSlice = createSlice({
-	name: 'students',
+	name: 'studentList',
 	initialState: {
 		loading: 'idle',
-		students: []
+		students: [],
+		filteredList: []
 	},
 	reducers: {
 		studentsLoading: (state) => {
@@ -22,12 +23,15 @@ const studentListSlice = createSlice({
 				state.loading = 'idle'
 				state.students = action.payload
 			}
+		},
+		setFilteredList: (state, action) => {
+			state.filteredList = action.payload
 		}
 	}
 })
 
 const {actions, reducer} = studentListSlice
 
-export const {studentsLoading, setStudents} = actions
+export const {studentsLoading, setStudents, setFilteredList} = actions
 
 export default reducer
