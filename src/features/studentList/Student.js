@@ -10,9 +10,9 @@ export const Student = ({student, average}) => {
 					<p>Email: {student.email}</p>
 					<p>Company: {student.company}</p>
 					<p>Skill: {student.skill}</p>
-					<p className='flex'>
-						Average: <span> {average}</span> %
-					</p>
+					<div className='flex'>
+						Average:<span>{average}</span>%
+					</div>
 				</div>
 			</div>
 		</li>
