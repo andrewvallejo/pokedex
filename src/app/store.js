@@ -7,7 +7,7 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import {setupListeners} from '@reduxjs/toolkit/query'
 import {apiSlice} from '../features/api/apiSlice'
-import studentListReducer from '../features/studentList/studentListSlice'
+import studentListReducer from '../features/students/studentListSlice'
 
 const rootReducer = combineReducers({
 	studentList: studentListReducer
