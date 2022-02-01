@@ -1,4 +1,3 @@
-import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {setSearchTerm} from '../features/search/searchSlice'
 
@@ -11,9 +10,9 @@ export const SearchBar = () => {
 	}
 
 	return (
-		<div className='flex flex-col justify-center items-center border-b'>
+		<div className='flex flex-col justify-center items-center border-b focus-within:border-b-black'>
 			<input
-				className='w-full h-12 p-1 text-lg hover:placeholder-black focus:outline-none focus:ring focus:border-blue-200 focus:placehholder-black'
+				className='w-full h-12 p-1 text-lg hover:placeholder-black focus:outline-none focus:placehholder-black '
 				type='text'
 				placeholder={`Search by ${searchField}`}
 				value={searchTerm}
