@@ -10,8 +10,8 @@
 
 import {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
-import {List} from './List'
 import {SearchBar} from './SearchBar'
+import {Student} from './Student'
 
 export const StudentPage = () => {
 	const [loadedStudents, setLoadedStudents] = useState([])
@@ -37,19 +37,29 @@ export const StudentPage = () => {
 		[loading, searchField, searchTerm, students]
 	)
 
+	const list = () => {
+		if (isLoaded) {
+			return loadedStudents.map((student) => <Student key={student.id} student={student} />)
+		}
+	}
+
+	const loader = () => {
+		if (loading) {
+			return (
+				<div className='flex flex-col justify-center items-center'>
+					<h2 className='text-3xl font-bold'>Loading...</h2>
+				</div>
+			)
+		}
+	}
+
 	return (
 		<main className='h-screen flex flex-col bg-gray-100 font-body justify-center items-center'>
-			<section className='bg-white min-w-10 w-4/5 h-3/4 rounded-lg shadow-md overflow-auto'>
-				<nav className='px-2 min-w-full'>
+			<section className='bg-white min-w-10 w-4/5 h-3/4 rounded-lg shadow-md overflow-auto relative'>
+				<nav className='px-2 min-w-full sticky top-0'>
 					<SearchBar field='name' filter={setLoadedStudents} />
 				</nav>
-				{isLoaded ? (
-					<List students={loadedStudents} />
-				) : (
-					<div className='flex flex-col justify-center items-center'>
-						<h1 className='text-3xl font-bold'>Loading...</h1>
-					</div>
-				)}
+				{isLoaded ? list() : loader()}
 			</section>
 		</main>
 	)
