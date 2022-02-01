@@ -20,7 +20,7 @@ export const SearchBar = () => {
 	return (
 		<div className='flex flex-col justify-center items-center border-b focus-within:border-b-black'>
 			<input
-				className='w-full h-12 p-1 text-lg hover:placeholder-black focus:outline-none focus:placehholder-black '
+				className='w-full h-12 p-1 text-lg hover:placeholder-black focus:outline-none focus:ring-2 focus:placehholder-black '
 				type='text'
 				placeholder={`Search by ${searchField}`}
 				value={searchTerm}
