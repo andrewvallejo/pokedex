@@ -2,33 +2,25 @@
 * @description: A list of all of the students
 * @elements: profile picture, name, email, company, skills, grade average
 */
+// import {SearchBar} from '../features/search/SearchBar'
 
-import React, {useEffect} from 'react'
-import {SearchBar} from '../features/students/SearchBar'
-import {useGetStudentsQuery} from '../features/api/apiSlice'
-import {Student} from '../features/students/Student'
-import {setStudents, studentsLoading} from '../features/students/studentListSlice'
-import {useDispatch} from 'react-redux'
+import {useEffect, useState} from 'react'
+import {useSelector} from 'react-redux'
+import {Student} from '../components/Student'
+import {SearchBar} from '../features/search/SearchBar'
 
 export const StudentPage = () => {
-	const {data, isLoading, isError} = useGetStudentsQuery()
+	const {loading, studentList: {students}} = useSelector((state) => state.reducer.students)
+	const [isLoaded, setLoaded] = useState(false)
 
-	if (isLoading) return <p>Loading...</p>
-	if (isError) return <p>Error :(</p>
-
-	const getAverage = (grades) => {
-		const average =
-			grades.reduce((acc, grade) => {
-				acc += parseInt(grade)
-				return acc
-			}, 0) / grades.length
-
-		return <p>{average}</p>
-	}
-
-	const students = data.students.map((student) => {
-		return <Student key={student.id} student={student} average={getAverage(student.grades)} />
-	})
+	useEffect(
+		() => {
+			if (loading === 'idle' && students) {
+				setLoaded(true)
+			}
+		},
+		[loading, students]
+	)
 
 	return (
 		<main className='h-screen flex flex-col bg-gray-100 font-body justify-center items-center'>
@@ -36,7 +28,15 @@ export const StudentPage = () => {
 				<nav className='px-2 min-w-full'>
 					<SearchBar field='name' />
 				</nav>
-				<ul className='divide-y'>{students}</ul>)
+				<div className='flex flex-col justify-center items-center'>
+					{isLoaded ? (
+						students.map((student) => <Student key={student.id} student={student} />)
+					) : (
+						<div className='flex flex-col justify-center items-center'>
+							<h1 className='text-3xl font-bold'>Loading...</h1>
+						</div>
+					)}
+				</div>
 			</section>
 		</main>
 	)
