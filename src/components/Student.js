@@ -1,3 +1,8 @@
+/** components | Student
+ * @description: A single student
+ * @elements: id, fullName, email, company, skill, average, grades, picture(pic)
+ */
+
 export const Student = ({student}) => {
 	return (
 		<li className='flex flex-wrap py-2 px-4 '>

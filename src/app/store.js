@@ -1,7 +1,6 @@
-/** app |  store
-* @reducers: studentList
-* @api: apiSlice
-* @description: Student Store with reducers and api
+/** app | Store
+* @reducers: students, search
+* @description Store contains students and search state
 */
 
 import {combineReducers, configureStore} from '@reduxjs/toolkit'

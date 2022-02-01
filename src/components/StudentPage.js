@@ -1,6 +1,11 @@
-/** studentList |  StudentList |Component
-* @description: A list of all of the students
-* @elements: profile picture, name, email, company, skills, grade average
+/** components |  StudentPage | Page
+* @description: A page that displays all students, and allows the user to filter by name.
+	@redux: search/searchSlice
+	@store: loading, students
+	@reducers: searchTerm, searchField
+  @state: loadedStudents([]), isLoaded(false)
+	@components: [Student]List, SearchBar
+	@elements: main, student portal, search bar, list of students
 */
 
 import {useEffect, useState} from 'react'

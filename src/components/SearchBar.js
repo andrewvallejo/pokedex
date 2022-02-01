@@ -1,3 +1,11 @@
+/** component | SearchBar
+ * @description: A search bar that allows the user to filter the list of students.
+ * @elements: searchTerm, searchField
+ * @redux: search/searchSlice
+ * @actions: setSearchTerm
+ * @reducers: searchTerm, searchField
+ */
+
 import {useDispatch, useSelector} from 'react-redux'
 import {setSearchTerm} from '../features/search/searchSlice'
 
