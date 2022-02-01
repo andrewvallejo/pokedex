@@ -37,29 +37,23 @@ export const StudentPage = () => {
 		[loading, searchField, searchTerm, students]
 	)
 
-	const list = () => {
-		if (isLoaded) {
-			return loadedStudents.map((student) => <Student key={student.id} student={student} />)
-		}
-	}
+	const list = loadedStudents.map((student) => <Student key={student.id} student={student} />)
 
-	const loader = () => {
-		if (loading) {
-			return (
-				<div className='flex flex-col justify-center items-center'>
-					<h2 className='text-3xl font-bold'>Loading...</h2>
-				</div>
-			)
-		}
-	}
+	const loader = (
+		<div className='flex flex-col justify-center items-center'>
+			<h2 className='text-3xl font-bold'>Loading...</h2>
+		</div>
+	)
+	//TODO fix scrollwheel top padding
+	// Figure out a way to add padding to the search bar bottom border
 
 	return (
 		<main className='h-screen flex flex-col bg-gray-100 font-body justify-center items-center'>
 			<section className='bg-white min-w-10 w-4/5 h-3/4 rounded-lg shadow-md overflow-auto relative'>
-				<nav className='px-2 min-w-full sticky top-0'>
+				<nav className='min-w-full sticky top-0'>
 					<SearchBar field='name' filter={setLoadedStudents} />
 				</nav>
-				{isLoaded ? list() : loader()}
+				<ul className='divide-y'>{isLoaded ? list : loader}</ul>
 			</section>
 		</main>
 	)
