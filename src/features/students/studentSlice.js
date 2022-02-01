@@ -7,11 +7,10 @@ import {createSlice} from '@reduxjs/toolkit'
 import {fetchStudents} from '../../api/studentApi'
 
 const studentListSlice = createSlice({
-	name: 'students',
+	name: 'studentList',
 	initialState: {
 		loading: 'idle',
-		studentList: [],
-		filteredList: []
+		studentList: []
 	},
 	reducers: {
 		setLoading: (state) => {
@@ -24,9 +23,6 @@ const studentListSlice = createSlice({
 				state.loading = 'idle'
 				state.studentList = action.payload
 			}
-		},
-		setFilteredList: (state, action) => {
-			state.filteredList = action.payload
 		}
 	},
 	extraReducers: {
