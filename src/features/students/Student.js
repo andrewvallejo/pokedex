@@ -5,7 +5,7 @@
 
 import {useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux'
-// import {Tag} from '../../components/Tag'
+import {Tag} from '../../components/Tag'
 import {TestScores} from '../../components/TestScores'
 import {setStudentTags} from './studentSlice'
 
@@ -14,14 +14,13 @@ export const Student = ({student}) => {
 
 	const [tagList, setTagList] = useState([])
 	const [tag, setTag] = useState('')
+
 	const studentTags = student.tags
 	const dispatch = useDispatch()
 
 	useEffect(
 		() => {
-			if (studentTags) {
-				setTagList(studentTags)
-			}
+			setTagList(studentTags)
 		},
 		[studentTags]
 	)
@@ -34,47 +33,55 @@ export const Student = ({student}) => {
 		setShowTestScores(!isShowTestScores)
 	}
 
+	const IsTagAvaialable = tagList.every((t) => t !== tag)
+
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		dispatch(setStudentTags({studentId: student.id, newTags: [...tagList, tag]}))
-		setTag('')
+		if (IsTagAvaialable) {
+			setTagList([...tagList, tag])
+			setTag('')
+			dispatch(setStudentTags(student.id, tagList))
+		}
 	}
 
 	return (
-		<li className='flex py-2 px-4'>
-			<img className='rounded-full self-center border w-32 h-32' src={student.pic} alt={student.firstName} />
-			<article className='px-5 w-full'>
-				<h2 className='font-bold uppercase text-4xl'>{student.name}</h2>
-				<div className='py-2 px-5'>
-					<p>Email: {student.email}</p>
-					<p>Company: {student.company}</p>
-					<p>Skill: {student.skill}</p>
-					<p className='flex'>Average: {student.average}%</p>
-					{isShowTestScores && (
-						<ul className='flex flex-col pt-2'>
-							<TestScores name={student.name} grades={student.grades} />{' '}
-						</ul>
-					)}
-					<article>
-						<form
-							className='flex flex-col w-1/2 justify-center items-center border-b  focus-within:border-b-black focus-visible:ring-2'
-							onSubmit={handleSubmit}>
-							<input
-								className='w-full h-12 p-1 text-md focus:outline-none'
-								type='text'
-								placeholder='Add a tag'
-								value={tag}
-								onChange={handleChange}
-							/>
-						</form>
-					</article>
-				</div>
-			</article>
-			<article className='flex justify-end align-start w-full '>
-				<button className='text-8xl text-gray-200 self-start hover:text-black' onClick={handleToggle}>
+		<li className='flex flex-col py-4 px-4 w-full h-full'>
+			<div className='flex flex-row-reverse justify-between'>
+				<button className='text-8xl text-gray-200 self-start  hover:text-black' onClick={handleToggle}>
 					{isShowTestScores ? '-' : '+'}
 				</button>
-			</article>
+				<article className='flex  max-w-fit max-h-full'>
+					<img className='rounded-full border w-32 h-32 sticky' src={student.pic} alt={student.firstName} />
+					<div className='px-5  max-h-1/2  w-full flex-col'>
+						<h2 className='font-bold uppercase text-4xl'>{student.name}</h2>
+						<div className='py-2 px-5'>
+							<h3>Email: {student.email}</h3>
+							<h3>Company: {student.company}</h3>
+							<h3>Skill: {student.skill}</h3>
+							<h3 className='flex'>Average: {student.average}%</h3>
+							<ul className='flex'>{tagList && tagList.map((tag) => <Tag key={tag} tag={tag} />)}</ul>
+							<form
+								className='flex flex-col w-1/2 border-b  focus-within:border-b-black focus-visible:ring-2'
+								onSubmit={handleSubmit}>
+								<input
+									className='w-full h-12 p-1 text-md focus:outline-none'
+									type='text'
+									placeholder='Add a tag'
+									value={tag}
+									onChange={handleChange}
+								/>
+							</form>
+						</div>
+						<aside>
+							{isShowTestScores && (
+								<ul className='flex flex-col pt-2'>
+									<TestScores name={student.name} grades={student.grades} />{' '}
+								</ul>
+							)}
+						</aside>
+					</div>
+				</article>
+			</div>
 		</li>
 	)
 }
