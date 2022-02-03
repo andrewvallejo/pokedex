@@ -34,6 +34,7 @@ const cleanData = ({students}) => {
 	students.forEach((student) => {
 		student.name = `${student.firstName} ${student.lastName}`
 		student.average = getAverage(student.grades)
+		student.tags = []
 		delete student.city
 	})
 }
