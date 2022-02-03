@@ -10,8 +10,9 @@
 
 import {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
+import {Loader} from '../../components/Loader'
+import {StudentList} from '../../components/StudentList'
 import {SearchBar} from '../search/SearchBar'
-import {Student} from './Student'
 
 export const StudentPage = () => {
 	const [loadedStudents, setLoadedStudents] = useState([])
@@ -37,13 +38,6 @@ export const StudentPage = () => {
 		[loading, searchField, searchTerm, students]
 	)
 
-	const list = loadedStudents.map((student) => <Student key={student.id} student={student} />)
-
-	const loader = (
-		<div className='flex flex-col justify-center items-center'>
-			<h2 className='text-3xl font-bold'>Loading...</h2>
-		</div>
-	)
 	//TODO fix scrollwheel top padding
 	// Figure out a way to add padding to the search bar bottom border
 
@@ -53,7 +47,15 @@ export const StudentPage = () => {
 				<nav className='min-w-full sticky top-0'>
 					<SearchBar field='name' filter={setLoadedStudents} />
 				</nav>
-				<ul className='divide-y'>{isLoaded ? list : loader}</ul>
+				{isLoaded ? (
+					<StudentList students={loadedStudents} />
+				) : 'loading' === loading ? (
+					<Loader />
+				) : (
+					<div className='flex flex-col justify-center items-center'>
+						<h2 className='text-3xl font-bold'>Loading...</h2>
+					</div>
+				)}
 			</section>
 		</main>
 	)
