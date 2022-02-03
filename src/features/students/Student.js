@@ -52,7 +52,7 @@ export const Student = ({student}) => {
 				</button>
 				<article className='flex  max-w-fit max-h-full'>
 					<img className='rounded-full border w-32 h-32 sticky' src={student.pic} alt={student.firstName} />
-					<div className='px-5  max-h-1/2  w-full flex-col'>
+					<div className='px-5 flex-col'>
 						<h2 className='font-bold uppercase text-4xl'>{student.name}</h2>
 						<div className='py-2 px-5'>
 							<h3>Email: {student.email}</h3>
@@ -60,11 +60,9 @@ export const Student = ({student}) => {
 							<h3>Skill: {student.skill}</h3>
 							<h3 className='flex'>Average: {student.average}%</h3>
 							<ul className='flex'>{tagList && tagList.map((tag) => <Tag key={tag} tag={tag} />)}</ul>
-							<form
-								className='flex flex-col w-1/2 border-b  focus-within:border-b-black focus-visible:ring-2'
-								onSubmit={handleSubmit}>
+							<form className='focus-within:border-b-black focus-visible:ring-2' onSubmit={handleSubmit}>
 								<input
-									className='w-full h-12 p-1 text-md focus:outline-none'
+									className='max-w-1/2 h-12 p-1 text-md  border-b focus:outline-none'
 									type='text'
 									placeholder='Add a tag'
 									value={tag}
