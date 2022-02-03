@@ -71,14 +71,14 @@ export const Student = ({student}) => {
 									onChange={handleChange}
 								/>
 							</form>
+							<aside>
+								{isShowTestScores && (
+									<ul className='flex flex-col pt-2 w-4/5'>
+										<TestScores name={student.name} grades={student.grades} />{' '}
+									</ul>
+								)}
+							</aside>
 						</div>
-						<aside>
-							{isShowTestScores && (
-								<ul className='flex flex-col pt-2'>
-									<TestScores name={student.name} grades={student.grades} />{' '}
-								</ul>
-							)}
-						</aside>
 					</div>
 				</article>
 			</div>
