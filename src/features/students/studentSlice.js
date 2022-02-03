@@ -27,6 +27,12 @@ const studentListSlice = createSlice({
 				state.loading = 'idle'
 				state.studentList = action.payload
 			}
+		},
+		setStudentTags: (state, action) => {
+			const {studentId, newTags} = action.payload
+			const {students} = state.studentList
+			const student = students.find((student) => student.id === studentId)
+			student.tags = newTags
 		}
 	},
 	extraReducers: {
@@ -45,6 +51,6 @@ const studentListSlice = createSlice({
 
 const {actions, reducer} = studentListSlice
 
-export const {setLoading, setStudents, setFilteredList} = actions
+export const {setLoading, setStudents, setStudentTags} = actions
 
 export default reducer
