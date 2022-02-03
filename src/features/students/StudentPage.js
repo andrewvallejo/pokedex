@@ -19,7 +19,9 @@ export const StudentPage = () => {
 	const [isLoaded, setLoaded] = useState(false)
 	const {loading, studentList: {students}} = useSelector((state) => state.reducer.students)
 
-	const {search: {searchTerm, searchField}} = useSelector((state) => state.reducer)
+	const {searchTerms} = useSelector((state) => state.reducer.search)
+	const nameQuery = searchTerms.name.query
+	const tagQuery = searchTerms.tags.query
 
 	useEffect(
 		() => {
@@ -27,15 +29,18 @@ export const StudentPage = () => {
 				setLoaded(true)
 				setLoadedStudents(students)
 			}
-			if (searchTerm) {
+			if (isLoaded && nameQuery) {
 				setLoadedStudents(
-					students.filter((student) => {
-						return student[searchField].toLowerCase().includes(searchTerm.toLowerCase())
-					})
+					students.filter((student) => student.name.toLowerCase().includes(nameQuery.toLowerCase()))
 				)
 			}
+			if (isLoaded && tagQuery) {
+				setLoadedStudents(students.filter((student) => student.tags.includes(tagQuery)))
+			} else if (isLoaded && !nameQuery && !tagQuery) {
+				setLoadedStudents(students)
+			}
 		},
-		[loading, searchField, searchTerm, students]
+		[isLoaded, nameQuery, students, tagQuery]
 	)
 
 	//TODO fix scrollwheel top padding
@@ -45,7 +50,8 @@ export const StudentPage = () => {
 		<main className='h-screen flex flex-col bg-gray-100 font-body justify-center items-center'>
 			<section className='bg-white min-w-10 w-4/5 h-3/4 rounded-lg shadow-md overflow-auto relative'>
 				<nav className='min-w-full sticky z-10 top-0'>
-					<SearchBar field='name' filter={setLoadedStudents} />
+					<SearchBar field='tags' />
+					<SearchBar field='name' />
 				</nav>
 				{isLoaded ? (
 					<List list={loadedStudents} type='students' />
