@@ -35,14 +35,26 @@ export const StudentPage = () => {
 				)
 			}
 			if (isLoaded && tagQuery) {
-				setLoadedStudents(students.filter((student) => student.tags.includes(tagQuery)))
-			} else if (isLoaded && !nameQuery && !tagQuery) {
-				setLoadedStudents(students)
+				setLoadedStudents(
+					students.filter((student) =>
+						student.tags.some((tag) => tag.toLowerCase().includes(tagQuery.toLowerCase()))
+					)
+				)
+			}
+			if (isLoaded && nameQuery && tagQuery) {
+				setLoadedStudents(
+					students.filter(
+						(student) =>
+							student.name.toLowerCase().includes(nameQuery.toLowerCase()) &&
+							student.tags.some((tag) => tag.toLowerCase().includes(tagQuery.toLowerCase()))
+					)
+				)
 			}
 		},
 		[isLoaded, nameQuery, students, tagQuery]
 	)
 
+	// FINAL TODO: Fix bug where only some tags are added to the student.
 	//TODO fix scrollwheel top padding
 	// Figure out a way to add padding to the search bar bottom border
 
