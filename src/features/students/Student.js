@@ -12,7 +12,7 @@ import {setStudentTags} from './studentSlice'
 export const Student = ({student}) => {
 	const [isShowTestScores, setShowTestScores] = useState(false)
 
-	const [newTags, setNewTags] = useState([])
+	const [tags, setTags] = useState([])
 	const [tag, setTag] = useState('')
 
 	const studentTags = student.tags
@@ -21,11 +21,11 @@ export const Student = ({student}) => {
 
 	useEffect(
 		() => {
-			if (!newTags) {
-				setNewTags(studentTags)
+			if (!tags) {
+				setTags(studentTags)
 			}
 		},
-		[newTags, studentTags]
+		[studentTags, tags]
 	)
 
 	const handleChange = (e) => {
@@ -36,14 +36,12 @@ export const Student = ({student}) => {
 		setShowTestScores(!isShowTestScores)
 	}
 
-	const IsTagAvaialable = newTags.every((t) => t !== tag)
-
-	const handleSubmit = (e) => {
-		e.preventDefault()
-		if (IsTagAvaialable) {
-			setNewTags([...newTags, tag])
+	const handleAddTag = (event) => {
+		event.preventDefault()
+		if (tag) {
+			setTags([...tags, tag])
 			setTag('')
-			dispatch(setStudentTags({studentId, newTags}))
+			dispatch(setStudentTags({studentId, tags}))
 		}
 	}
 
@@ -62,8 +60,8 @@ export const Student = ({student}) => {
 							<h3>Company: {student.company}</h3>
 							<h3>Skill: {student.skill}</h3>
 							<h3 className='flex'>Average: {student.average}%</h3>
-							<ul className='flex'>{newTags && newTags.map((tag) => <Tag key={tag} tag={tag} />)}</ul>
-							<form className='focus-within:border-b-black focus-visible:ring-2' onSubmit={handleSubmit}>
+							<ul className='flex'>{studentTags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
+							<form className='focus-within:border-b-black focus-visible:ring-2' onSubmit={handleAddTag}>
 								<input
 									className='max-w-1/2 h-12 p-1 text-md  border-b focus:outline-none'
 									type='text'
