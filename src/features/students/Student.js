@@ -40,9 +40,10 @@ export const Student = ({student}) => {
 		const checkForDuplicate = tags.find((t) => t === tag)
 		event.preventDefault()
 		if (tag && !checkForDuplicate) {
-			setTags([...tags, tag])
+			const tagList = [...tags, tag]
+			setTags(tagList)
 			setTag('')
-			dispatch(setStudentTags({studentId, tags}))
+			dispatch(setStudentTags({studentId, tagList}))
 		}
 	}
 
