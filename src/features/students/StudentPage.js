@@ -57,7 +57,7 @@ export const StudentPage = () => {
 	return (
 		<main className='h-screen flex flex-col bg-gray-100 font-body justify-center items-center'>
 			<section className='bg-white min-w-10 w-4/5 h-3/4 rounded-lg shadow-md overflow-hidden relative'>
-				<nav className='min-w-full sticky z-10 top-0'>
+				<nav className='min-w-full sticky z-10 top-0 px-2'>
 					<SearchBar field='tags' />
 					<SearchBar field='name' />
 				</nav>
