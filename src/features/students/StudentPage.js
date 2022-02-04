@@ -54,10 +54,6 @@ export const StudentPage = () => {
 		[isLoaded, nameQuery, students, tagQuery]
 	)
 
-	// FINAL TODO: Fix bug where only some tags are added to the student.
-	//TODO fix scrollwheel top padding
-	// Figure out a way to add padding to the search bar bottom border
-
 	return (
 		<main className='h-screen flex flex-col bg-gray-100 font-body justify-center items-center'>
 			<section className='bg-white min-w-10 w-4/5 h-3/4 rounded-lg shadow-md overflow-auto relative'>
