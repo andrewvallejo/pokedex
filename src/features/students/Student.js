@@ -65,9 +65,9 @@ export const Student = ({student}) => {
 							{studentTags && (
 								<ul className='flex'>{tags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
 							)}
-							<form className='focus-within:border-b-black focus-visible:ring-2' onSubmit={handleAddTag}>
+							<form onSubmit={handleAddTag}>
 								<input
-									className='max-w-1/2 h-12 p-1 text-md  border-b focus:outline-none'
+									className='max-w-1/2 h-12 p-1 text-md border-b-2 border-b-gray-100 focus:outline-none focus:border-b-black'
 									type='text'
 									placeholder='Add a tag'
 									value={tag}
