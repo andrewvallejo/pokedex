@@ -29,10 +29,10 @@ const studentListSlice = createSlice({
 			}
 		},
 		setStudentTags: (state, action) => {
-			const {studentId, newTags} = action.payload
+			const {studentId, tags} = action.payload
 			const {students} = state.studentList
 			const student = students.find((student) => student.id === studentId)
-			student.tags = newTags
+			student.tags = tags
 		}
 	},
 	extraReducers: {
