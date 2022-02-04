@@ -50,13 +50,19 @@ export const Student = ({student}) => {
 	return (
 		<li className='flex flex-col py-4 px-4 w-full'>
 			<div className='flex flex-row-reverse justify-between'>
-				<button className='text-8xl text-gray-200 self-start  hover:text-black' onClick={handleToggle}>
+				<button
+					className='text-9xl md:text-8xl text-gray-200 self-start hover:text-black'
+					onClick={handleToggle}>
 					{isShowTestScores ? '-' : '+'}
 				</button>
-				<article className='flex  max-w-fit max-h-full'>
-					<img className='rounded-full border w-32 h-32 sticky' src={student.pic} alt={student.firstName} />
+				<article className='text-xl md:text-md flex flex-wrap justify-center md:justify-around md:flex-nowrap max-w-fit max-h-full'>
+					<img
+						className='rounded-full border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
+						src={student.pic}
+						alt={student.firstName}
+					/>
 					<div className='px-5 flex-col'>
-						<h2 className='font-bold uppercase text-4xl'>{student.name}</h2>
+						<h2 className='px-3 md:px-0 font-bold uppercase text-2xl md:text-4xl'>{student.name}</h2>
 						<div className='py-2 px-5'>
 							<h3>Email: {student.email}</h3>
 							<h3>Company: {student.company}</h3>
