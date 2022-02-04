@@ -48,7 +48,7 @@ export const Student = ({student}) => {
 	}
 
 	return (
-		<li className='flex flex-col py-4 px-4 w-full h-full'>
+		<li className='flex flex-col py-4 px-4 w-full'>
 			<div className='flex flex-row-reverse justify-between'>
 				<button className='text-8xl text-gray-200 self-start  hover:text-black' onClick={handleToggle}>
 					{isShowTestScores ? '-' : '+'}
