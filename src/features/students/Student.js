@@ -21,7 +21,7 @@ export const Student = ({student}) => {
 
 	useEffect(
 		() => {
-			if (!tags) {
+			if (!tags || tags.length === 0) {
 				setTags(studentTags)
 			}
 		},
@@ -37,8 +37,9 @@ export const Student = ({student}) => {
 	}
 
 	const handleAddTag = (event) => {
+		const checkForDuplicate = tags.find((t) => t === tag)
 		event.preventDefault()
-		if (tag) {
+		if (tag && !checkForDuplicate) {
 			setTags([...tags, tag])
 			setTag('')
 			dispatch(setStudentTags({studentId, tags}))
@@ -60,7 +61,9 @@ export const Student = ({student}) => {
 							<h3>Company: {student.company}</h3>
 							<h3>Skill: {student.skill}</h3>
 							<h3 className='flex'>Average: {student.average}%</h3>
-							<ul className='flex'>{studentTags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
+							{studentTags && (
+								<ul className='flex'>{tags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
+							)}
 							<form className='focus-within:border-b-black focus-visible:ring-2' onSubmit={handleAddTag}>
 								<input
 									className='max-w-1/2 h-12 p-1 text-md  border-b focus:outline-none'
