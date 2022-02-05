@@ -10,7 +10,8 @@ module.exports = {
 			gray: {
 				100: '#ededed',
 				200: '#a0a0a0'
-			}
+			},
+			transparent: 'transparent'
 		}
 	}
 }
