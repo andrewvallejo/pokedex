@@ -10,14 +10,14 @@
 
 import {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
-import {Loader} from '../../components/Loader'
+
 import {List} from '../../components/List'
 import {SearchBar} from '../search/SearchBar'
 
 export const StudentPage = () => {
 	const [loadedStudents, setLoadedStudents] = useState([])
 	const [isLoaded, setLoaded] = useState(false)
-	const {loading, studentList: {students}} = useSelector((state) => state.reducer.students)
+	const {studentList: {students}} = useSelector((state) => state.reducer.students)
 
 	const {searchTerms} = useSelector((state) => state.reducer.search)
 	const nameQuery = searchTerms.name.query
@@ -60,15 +60,7 @@ export const StudentPage = () => {
 				<SearchBar field='tags' />
 				<SearchBar field='name' />
 			</nav>
-			{isLoaded ? (
-				<List list={loadedStudents} type='students' />
-			) : 'loading' === loading ? (
-				<Loader />
-			) : (
-				<div className='flex flex-col justify-center items-center'>
-					<h2 className='text-3xl font-bold'>Loading...</h2>
-				</div>
-			)}
+			{isLoaded ? <List list={loadedStudents} type='students' /> : <List list={loadedStudents} type='loader' />}
 		</section>
 	)
 }
