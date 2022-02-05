@@ -55,7 +55,7 @@ export const Student = ({student}) => {
 					onClick={handleToggle}>
 					{isShowTestScores ? '-' : '+'}
 				</button>
-				<article className='text-xl md:text-md flex justify-center md:justify-around'>
+				<article className='text-xl md:text-md flex flex-wrap justify-center md:justify-around md:flex-nowrap'>
 					<img
 						className='rounded-full border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
 						src={student.pic}
