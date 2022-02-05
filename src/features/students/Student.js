@@ -83,7 +83,7 @@ export const Student = ({student}) => {
 				</div>
 				<div className='flex  flex-1 flex-row-reverse'>
 					<button
-						className='absolute top-5  md:top-0 text-[10rem] md:text-8xl text-gray-200 hover:text-black'
+						className='absolute -top-10 md:top-0 text-[10rem] md:text-8xl text-gray-200 hover:text-black'
 						onClick={handleToggle}>
 						{isShowTestScores ? '-' : '+'}
 					</button>
