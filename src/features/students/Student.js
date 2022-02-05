@@ -57,9 +57,7 @@ export const Student = ({student}) => {
 				/>
 				<div>
 					<div className='px-5 flex-col'>
-						<h2 className='px-3 w-[calc(100%+10rem)]  md:px-0 font-bold uppercase text-2xl md:text-4xl'>
-							{student.name}
-						</h2>
+						<h2 className='px-3 md:px-0 font-bold uppercase text-2xl md:text-4xl'>{student.name}</h2>
 						<div className='py-2 px-5'>
 							<h3>Email: {student.email}</h3>
 							<h3>Company: {student.company}</h3>
