@@ -55,22 +55,20 @@ export const StudentPage = () => {
 	)
 
 	return (
-		<main className='h-screen flex flex-col bg-gray-100 font-body justify-center items-center'>
-			<section className='bg-white w-full h-full md:w-4/5 md:h-3/4 rounded-lg shadow-md overflow-hidden relative'>
-				<nav className='min-w-full sticky z-10 top-0 px-2'>
-					<SearchBar field='tags' />
-					<SearchBar field='name' />
-				</nav>
-				{isLoaded ? (
-					<List list={loadedStudents} type='students' />
-				) : 'loading' === loading ? (
-					<Loader />
-				) : (
-					<div className='flex flex-col justify-center items-center'>
-						<h2 className='text-3xl font-bold'>Loading...</h2>
-					</div>
-				)}
-			</section>
-		</main>
+		<section className='bg-white w-full h-full md:w-4/5 md:h-3/4 rounded-lg shadow-md overflow-hidden relative'>
+			<nav className='min-w-full sticky z-10 top-0 pb-2'>
+				<SearchBar field='tags' />
+				<SearchBar field='name' />
+			</nav>
+			{isLoaded ? (
+				<List list={loadedStudents} type='students' />
+			) : 'loading' === loading ? (
+				<Loader />
+			) : (
+				<div className='flex flex-col justify-center items-center'>
+					<h2 className='text-3xl font-bold'>Loading...</h2>
+				</div>
+			)}
+		</section>
 	)
 }
