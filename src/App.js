@@ -21,7 +21,7 @@ export const App = () => {
 	)
 
 	return (
-		<main className='h-screen flex flex-col bg-gray-100 font-body justify-center items-center'>
+		<main className='h-screen flex flex-col bg-gray-100 justify-center items-center'>
 			<Routes>
 				<Route path='/' element={<StudentPage />} />
 			</Routes>
