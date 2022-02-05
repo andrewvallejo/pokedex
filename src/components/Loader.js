@@ -1,6 +1,6 @@
 export const Loader = () => {
 	return (
-		<li className='flex flex-col  px-4 h-3/5 md:h-1/2 w-full overscroll-auto snap-bottom overflow-hidden  -mb-2'>
+		<li className='flex flex-col px-4 h-3/5 md:h-1/2 w-full overscroll-auto snap-bottom  mb-[-2.1rem]'>
 			<div className='animate-pulse  flex w-full justify-center flex-wrap relative'>
 				<div className='rounded-full mt-4 bg-gray-100 w-40 h-40 md:w-32 md:h-32 border' />
 				<div>
