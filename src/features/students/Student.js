@@ -48,14 +48,14 @@ export const Student = ({student}) => {
 	}
 
 	return (
-		<li className='flex flex-col py-4 px-4 w-full'>
+		<li className='flex flex-col py-4 px-4 w-full overscroll-auto snap-bottom'>
 			<div className='flex flex-row-reverse justify-between'>
 				<button
 					className='text-9xl md:text-8xl text-gray-200 self-start hover:text-black'
 					onClick={handleToggle}>
 					{isShowTestScores ? '-' : '+'}
 				</button>
-				<article className='text-xl md:text-md flex flex-wrap justify-center md:justify-around md:flex-nowrap max-w-fit max-h-full'>
+				<article className='text-xl md:text-md flex flex-wrap justify-center md:justify-around md:flex-nowrap'>
 					<img
 						className='rounded-full border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
 						src={student.pic}
@@ -80,12 +80,9 @@ export const Student = ({student}) => {
 									onChange={handleChange}
 								/>
 							</form>
-
-							{isShowTestScores && (
-								<ul className='flex flex-col pt-2'>
-									<TestScores name={student.name} grades={student.grades} />{' '}
-								</ul>
-							)}
+							<ul className='flex flex-col pt-2'>
+								{isShowTestScores && <TestScores name={student.name} grades={student.grades} />}
+							</ul>
 						</div>
 					</div>
 				</article>

@@ -5,5 +5,5 @@ export const List = ({list, type}) => {
 		students: list.map((student) => <Student key={student.id} student={student} />)
 	}
 
-	return <ul className='divide-y divide-gray-100 overflow-auto h-full'>{selections[type]}</ul>
+	return <ul className='divide-y divide-gray-100 overflow-auto overscroll-auto h-full snap-x '>{selections[type]}</ul>
 }
