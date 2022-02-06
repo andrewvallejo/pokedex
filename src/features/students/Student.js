@@ -48,7 +48,7 @@ export const Student = ({student}) => {
 	}
 
 	return (
-		<li className='flex flex-col py-4 px-4 w-full overscroll-auto snap-bottom'>
+		<li className='flex flex-col py-4 px-4 w-full snap-bottom'>
 			<div className='flex flex-row w-full flex-wrap relative'>
 				{student.pic ? (
 					<img
