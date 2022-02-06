@@ -21,7 +21,7 @@ export const Loader = () => {
 					</div>
 				</div>
 				<div className='flex  flex-1 flex-row-reverse '>
-					<button className='absolute -top-5 md:top-4 text-[10rem] md:text-8xl text-gray-200 hover:text-black'>
+					<button className='absolute -top-5 md:top-4 text-[10rem] md:text-8xl text-gray-200 sm:hover:text-black'>
 						+
 					</button>
 				</div>
