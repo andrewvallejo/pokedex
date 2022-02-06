@@ -57,7 +57,7 @@ export const Student = ({student}) => {
 						alt={student.firstName}
 					/>
 				) : (
-					<div className='rounded-full border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
+					<div className='rounded-full animate-pulse border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
 				)}
 				<div>
 					<div className='px-5 flex-col'>
