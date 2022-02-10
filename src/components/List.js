@@ -7,5 +7,9 @@ export const List = ({list, type}) => {
 		loader: Array.from({length: 10}).map((_, i) => <Loader key={i} />)
 	}
 
-	return <ul className='divide-y divide-gray-100   overscroll-auto h-full snap-x'>{selections[type]}</ul>
+	return (
+		<ul className='divide-y divide-gray-100 overscroll-auto h-full snap-x' data-cy={`list-${type}`}>
+			{selections[type]}
+		</ul>
+	)
 }

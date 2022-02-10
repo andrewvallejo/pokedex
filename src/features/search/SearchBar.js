@@ -25,6 +25,7 @@ export const SearchBar = ({field}) => {
 				placeholder={`Search by ${field}`}
 				value={searchTerms[field].value}
 				onChange={handleChange}
+				data-cy={`search-bar-${field}`}
 			/>
 		</div>
 	)

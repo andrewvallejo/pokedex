@@ -48,7 +48,7 @@ export const Student = ({student}) => {
 	}
 
 	return (
-		<li className='flex flex-col py-4 px-4 w-full snap-bottom'>
+		<li className='flex flex-col py-4 px-4 w-full snap-bottom' cy-data={`student-${student.id}`}>
 			<div className='flex flex-row w-full flex-wrap relative'>
 				{student.pic ? (
 					<img
@@ -79,7 +79,7 @@ export const Student = ({student}) => {
 									onChange={handleChange}
 								/>
 							</form>
-							<ul className='flex flex-col pt-2'>
+							<ul className='flex flex-col pt-2' data-cy='testscores-list'>
 								{isShowTestScores && <TestScores name={student.name} grades={student.grades} />}
 							</ul>
 						</div>
