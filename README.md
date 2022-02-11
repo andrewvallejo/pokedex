@@ -1,6 +1,7 @@
 <div align='center'>
 
-# Phasebook
+![image](https://user-images.githubusercontent.com/17935770/153664618-e4c31d58-5445-46aa-9cfb-fd8bdc5bd269.png)
+
 
 </div>
 
@@ -8,7 +9,12 @@ An application that allows you to search for other students from your school. Th
 
 <div align='center'>
 
+
+
 ### Visit [PhaseBook](https://phasebook.netlify.app/)
+
+![image](https://user-images.githubusercontent.com/17935770/153666873-d3fefd30-a57c-41e8-a9aa-b45779e9932d.png)
+
 
 </div>
 
@@ -70,6 +76,10 @@ You can open the Cypress and run the spec by typing the command.
 npm test
 ```
 
+## Demo
+
+![Screen Recording 2022-02-11 at 1 25 38 PM](https://user-images.githubusercontent.com/17935770/153665934-24871254-f992-47be-a006-c0fff6dc5ea1.gif)
+
 ## Features
 
 - See a list of all of your classmates
@@ -90,6 +100,7 @@ npm test
 <div align='center'>
 
 ## Technologies
+
 <img src='https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat' alt='React Badge'>
 <img src='https://img.shields.io/badge/Redux-764ABC?logo=react&logoColor=fff&style=flat' alt='Redux Badge'>
 <img src='https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat' alt='JavaScript Badge'>
