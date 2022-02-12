@@ -1,5 +1,10 @@
 /// <reference types="cypress" />
 
+/** 1-student-page | navigation spec | integration
+ *	@description: This test is to verify the navigation of the student page.
+ *	@tests: do page elements, students, profile, and test scores exist. | filter navigation
+ */
+
 describe('Student Page Navigation Spec', () => {
 	before(() => {
 		cy.visit('/')

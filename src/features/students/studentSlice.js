@@ -1,4 +1,4 @@
-/** studentList |  studentListSlice | slice
+/** feature |  tudentSlice | slice
 	 * @description: A slice of the redux store that contains the list of students.
 	 * @redux: students/studentListSlice
 	 * @store: loading, students

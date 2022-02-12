@@ -1,8 +1,8 @@
 /** search | searchSlice | slice
 	 * @description: A slice of the redux store that contains the search term and the field to search by.
 	 * @redux: search/searchSlice
-	 * @state: searchTerm, searchField
-	 * @reducers: searchTerm, searchField
+	 * @state: searchTerms | name - query | tags - query
+	 * @reducers: setSearchTerm
  */
 
 import {createSlice} from '@reduxjs/toolkit'

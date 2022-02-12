@@ -1,3 +1,9 @@
+/** components |  List
+* @description: A component that displays a list of items
+* @param: list: the list of items to display | type: the type of list to display
+* @components: Student, Loader
+*/
+
 import {Student} from '../features/students/Student'
 import {Loader} from './Loader'
 

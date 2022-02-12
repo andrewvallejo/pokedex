@@ -1,3 +1,7 @@
+/** components |  TestScores
+* @description: A component that displays the test scores of a student
+*/
+
 export const TestScores = ({name, grades}) =>
 	grades.map((grade, i) => {
 		const testNumber = i + 1

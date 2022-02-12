@@ -1,6 +1,6 @@
 /** app | Store
 * @reducers: students, search
-* @description Store contains students and search state
+* @description Store contains students and search slices
 */
 
 import {combineReducers, configureStore} from '@reduxjs/toolkit'

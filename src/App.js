@@ -1,7 +1,8 @@
 /** src | App.js
  * @description: The main app component
  * @components: StudentPage
- * @Routes: '/' -> Student Page
+ * @Routes: '/' -> Student Page | '/*' -> Student Page
+ * @api: studentsAPI | fetchStudents
  */
 
 import {useEffect} from 'react'

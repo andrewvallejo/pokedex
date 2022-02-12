@@ -1,8 +1,8 @@
 /** api | Student API | fetchStudents
- *	@description | Fetch all students
- *	@url | https://api.hatchways.io/assessment/students
- *	@method | GET
- *	@returns | An array of students
+ *	@description:Fetch all students
+ *	@url:https://api.hatchways.io/assessment/students
+ *	@method:GET
+ *	@returns:An array of students
  */
 
 import {createAsyncThunk} from '@reduxjs/toolkit'
