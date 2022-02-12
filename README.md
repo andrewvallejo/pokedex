@@ -24,7 +24,7 @@ The project is broken into five parts, each with a feature and a wireframe.
 
 > The goal of this assessment is to replicate the frontend application below as close as possible. You are allowed to use any frontend framework (React.js, Vue.js, etc.) or use plain Javascript, HTML, and CSS.
 
-I have chosen to use React as my framework and utilize other technologies such as Redux and Tailwind CSS.
+I have chosen to use React as my framework and utilize other technologies like Redux and Tailwind CSS.
 
 The [project board](https://github.com/users/andrewvallejo/projects/2/views/1?visibleFields=%5B%22Title%22%2C%22Status%22%2C%22Labels%22%2C%22Repository%22%2C%22Assignees%22%5D) is where I organized all of my issues and objectives for my application. The **User Stories** drop-down is a high-level overview of what was required for the assignment.
 
