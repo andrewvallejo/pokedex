@@ -18,7 +18,7 @@ export const List = ({list, type}) => {
 			{selections[type]}
 			{!list.length && (
 				<p className='text-center text-5xl text-gray-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-					No {type} found
+					No Student found
 				</p>
 			)}
 		</ul>
