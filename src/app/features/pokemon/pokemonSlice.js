@@ -32,7 +32,7 @@ const pokemonSlice = createSlice({
 		},
 		[fetchPokemon.fulfilled]: (state, action) => {
 			state.loading = 'idle'
-			state.pokemonList = action.payload
+			state.pokedex = action.payload
 		},
 		[fetchPokemon.rejected]: (state) => {
 			state.loading = 'idle'

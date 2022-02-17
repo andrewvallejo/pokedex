@@ -1,10 +1,8 @@
 import {Pokemon} from '../../app/features/pokemon/Pokemon'
-import {Loader} from './Loader'
 
 export const List = ({list, type}) => {
 	const selections = {
-		pokemon: list.map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon} />),
-		loader: Array.from({length: 10}).map((_, i) => <Loader key={i} />)
+		pokemon: list.map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon} />)
 	}
 
 	return (

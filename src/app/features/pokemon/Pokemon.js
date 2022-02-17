@@ -7,7 +7,7 @@ import {TestScores} from '../../../components/pokedex/TestScores'
 import {setPokemonTags} from './pokemonSlice'
 
 export const Pokemon = ({pokemon}) => {
-	const [isShowTestScores, setShowTestScores] = useState(false) < Tag
+	const [isShowTestScores, setShowTestScores] = useState(false)
 	const [tags, setTags] = useState([])
 	const [tag, setTag] = useState('')
 
