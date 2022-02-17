@@ -1,10 +1,3 @@
-/** api | Student API | fetchStudents
- *	@description:Fetch all students
- *	@url:https://api.hatchways.io/assessment/students
- *	@method:GET
- *	@returns:An array of students
- */
-
 import {createAsyncThunk} from '@reduxjs/toolkit'
 
 export const fetchStudents = createAsyncThunk('students/fetchStudents', async () => {
@@ -15,11 +8,6 @@ export const fetchStudents = createAsyncThunk('students/fetchStudents', async ()
 	})
 	return data
 })
-
-/** api | Student Data Cleaner | cleanData
- *	@description | An instance of a student after cleaning
- *	@params | id, fullName, email, company, skill, average, grades
-*/
 
 const cleanData = ({students}) => {
 	const getAverage = (grades) => {

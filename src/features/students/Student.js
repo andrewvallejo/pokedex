@@ -1,10 +1,3 @@
-/** feature | Student
- * @description: A single student
- * @elements: id, fullName, email, company, skill, average(of grades), test scores(grades), picture(pic)
- * @component: Tag, TestScores
- * @redux: studentSlice | setStudentTags
- */
-
 import {useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {Tag} from '../../components/Tag'

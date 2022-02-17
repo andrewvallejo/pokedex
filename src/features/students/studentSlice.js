@@ -1,12 +1,3 @@
-/** feature |  tudentSlice | slice
-	 * @description: A slice of the redux store that contains the list of students.
-	 * @redux: students/studentListSlice
-	 * @store: loading, students
-	 * @reducers: setLoading, setStudents
-	 * @extraReducers: true
-	 * @api: fetchStudents - GET - all students
-*/
-
 import {createSlice} from '@reduxjs/toolkit'
 import {fetchStudents} from '../../api/studentApi'
 

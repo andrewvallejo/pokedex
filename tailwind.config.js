@@ -5,6 +5,7 @@ module.exports = {
 			body: ['Raleway', 'sans-serif']
 		},
 		colors: {
+			red: '#ff0000',
 			white: '#fff',
 			black: '#000',
 			gray: {

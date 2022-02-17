@@ -1,10 +1,3 @@
-/** src | App.js
- * @description: The main app component
- * @components: StudentPage
- * @Routes: '/' -> Student Page | '/*' -> Student Page
- * @api: studentsAPI | fetchStudents
- */
-
 import {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {Navigate} from 'react-router-dom'

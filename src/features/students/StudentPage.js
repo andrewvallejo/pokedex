@@ -1,10 +1,3 @@
-/** feature |  StudentPage | Page
-* @description: A page that displays all students, and allows the user to filter by name.
-	@redux: searchSlice | searchTerms
-	@components: List[student], List[loader], SearchBar[name, tags]
-	@elements: main, student portal, search bars, list of students
-*/
-
 import {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
 import {List} from '../../components/List'

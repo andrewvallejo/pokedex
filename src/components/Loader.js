@@ -1,8 +1,3 @@
-/** components |  Loader
-* @description: A component that displays a fading in-and-out loader that
-* is an outline of the students profile
-*/
-
 export const Loader = () => {
 	return (
 		<li className='flex flex-col px-4 h-3/5 md:h-1/2 w-full overscroll-auto snap-bottom  mb-[-2.1rem]'>
