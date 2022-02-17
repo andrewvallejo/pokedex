@@ -5,7 +5,7 @@ import {SearchBar} from '../app/features/search/SearchBar'
 import {List} from './pokedex/List'
 
 export const Home = () => {
-	const [loadedPokemon, setLoadedPokemon] = useState([])
+	const [loadedPokedex, setLoadedPokedex] = useState([])
 	const [isLoaded, setLoaded] = useState(false)
 	const {pokedex} = useSelector((state) => state.reducer.pokemon)
 	const {searchTerms} = useSelector((state) => state.reducer.search)
@@ -16,22 +16,22 @@ export const Home = () => {
 		() => {
 			if (pokedex) {
 				setLoaded(true)
-				setLoadedPokemon(pokedex)
+				setLoadedPokedex(pokedex)
 			}
 			if (isLoaded && nameQuery) {
-				setLoadedPokemon(
+				setLoadedPokedex(
 					pokedex.filter((pokemon) => pokemon.name.toLowerCase().includes(nameQuery.toLowerCase()))
 				)
 			}
 			if (isLoaded && tagQuery) {
-				setLoadedPokemon(
+				setLoadedPokedex(
 					pokedex.filter((pokemon) =>
 						pokemon.tags.some((tag) => tag.toLowerCase().includes(tagQuery.toLowerCase()))
 					)
 				)
 			}
 			if (isLoaded && nameQuery && tagQuery) {
-				setLoadedPokemon(
+				setLoadedPokedex(
 					pokedex.filter(
 						(pokemon) =>
 							pokemon.name.toLowerCase().includes(nameQuery.toLowerCase()) &&
@@ -52,7 +52,7 @@ export const Home = () => {
 				<SearchBar field='name' />
 			</nav>
 
-			{isLoaded ? <List list={loadedPokemon} type='pokemon' /> : <List list={loadedPokemon} type='loader' />}
+			{isLoaded ? <List list={loadedPokedex} type='pokemon' /> : <List list={loadedPokedex} type='loader' />}
 		</section>
 	)
 }
