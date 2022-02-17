@@ -1,4 +1,4 @@
-import {Student} from '../features/students/Student'
+import {Student} from '../../features/students/Student'
 import {Loader} from './Loader'
 
 export const List = ({list, type}) => {
