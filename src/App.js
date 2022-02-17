@@ -8,9 +8,6 @@ import {Home} from './components/Home'
 export const App = () => {
 	const dispatch = useDispatch()
 
-	// TODO: [] Fix + sign size
-	// TODO: [] Fix double scroll bars on app
-
 	useEffect(
 		() => {
 			dispatch(fetchPokemon())
