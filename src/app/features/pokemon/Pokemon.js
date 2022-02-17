@@ -1,26 +1,27 @@
 import {useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux'
-import {Tag} from '../../components/Tag'
-import {TestScores} from '../../components/TestScores'
-import {setStudentTags} from './studentSlice'
 
-export const Student = ({student}) => {
-	const [isShowTestScores, setShowTestScores] = useState(false)
+import {Tag} from '../../../components/pokedex/Tag'
+import {TestScores} from '../../../components/pokedex/TestScores'
 
+import {setPokemonTags} from './pokemonSlice'
+
+export const Pokemon = ({pokemon}) => {
+	const [isShowTestScores, setShowTestScores] = useState(false) < Tag
 	const [tags, setTags] = useState([])
 	const [tag, setTag] = useState('')
 
-	const studentTags = student.tags
-	const studentId = student.id
+	const pokemonTags = pokemon.tags
+	const pokemonId = pokemon.id
 	const dispatch = useDispatch()
 
 	useEffect(
 		() => {
 			if (!tags || tags.length === 0) {
-				setTags(studentTags)
+				setTags(pokemonTags)
 			}
 		},
-		[studentTags, tags]
+		[pokemonTags, tags]
 	)
 
 	const handleChange = (e) => {
@@ -38,31 +39,31 @@ export const Student = ({student}) => {
 			const tagList = [...tags, tag]
 			setTags(tagList)
 			setTag('')
-			dispatch(setStudentTags({studentId, tagList}))
+			dispatch(setPokemonTags({pokemonId, tagList}))
 		}
 	}
 
 	return (
-		<li className='flex flex-col py-4 px-4 w-full snap-bottom' cy-data={`student-${student.id}`}>
+		<li className='flex flex-col py-4 px-4 w-full snap-bottom' cy-data={`pokemon-${pokemon.id}`}>
 			<div className='flex flex-row w-full flex-wrap relative'>
-				{student.pic ? (
+				{pokemon.pic ? (
 					<img
 						className='rounded-full border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
-						src={student.pic}
-						alt={student.firstName}
+						src={pokemon.pic}
+						alt={pokemon.firstName}
 					/>
 				) : (
 					<div className='rounded-full animate-pulse border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
 				)}
 				<div>
 					<div className='px-5 flex-col'>
-						<h2 className='px-3 md:px-0 font-bold uppercase text-2xl md:text-4xl'>{student.name}</h2>
+						<h2 className='px-3 md:px-0 font-bold uppercase text-2xl md:text-4xl'>{pokemon.name}</h2>
 						<div className='py-2 px-5'>
-							<h3>Email: {student.email}</h3>
-							<h3>Company: {student.company}</h3>
-							<h3>Skill: {student.skill}</h3>
-							<h3 className='flex'>Average: {student.average}%</h3>
-							{studentTags && (
+							<h3>Email: {pokemon.email}</h3>
+							<h3>Company: {pokemon.company}</h3>
+							<h3>Skill: {pokemon.skill}</h3>
+							<h3 className='flex'>Average: {pokemon.average}%</h3>
+							{pokemonTags && (
 								<ul className='flex'>{tags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
 							)}
 							<form onSubmit={handleAddTag}>
@@ -75,7 +76,7 @@ export const Student = ({student}) => {
 								/>
 							</form>
 							<ul className='flex flex-col pt-2' data-cy='testscores-list'>
-								{isShowTestScores && <TestScores name={student.name} grades={student.grades} />}
+								{isShowTestScores && <TestScores name={pokemon.name} grades={pokemon.grades} />}
 							</ul>
 						</div>
 					</div>

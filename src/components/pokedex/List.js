@@ -1,9 +1,9 @@
-import {Student} from '../../features/students/Student'
+import {Pokemon} from '../../app/features/pokemon/Pokemon'
 import {Loader} from './Loader'
 
 export const List = ({list, type}) => {
 	const selections = {
-		students: list.map((student) => <Student key={student.id} student={student} />),
+		pokemon: list.map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon} />),
 		loader: Array.from({length: 10}).map((_, i) => <Loader key={i} />)
 	}
 
@@ -12,7 +12,7 @@ export const List = ({list, type}) => {
 			{selections[type]}
 			{!list.length && (
 				<p className='text-center text-5xl text-gray-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-					No Student found
+					No pokemon found
 				</p>
 			)}
 		</ul>

@@ -1,10 +1,10 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import {setupListeners} from '@reduxjs/toolkit/query'
-import studentsReducer from '../features/students/studentSlice'
-import searchReducer from '../features/search/searchSlice'
+import searchReducer from './features/search/searchSlice'
+import pokemonReducer from './features/pokemon/pokemonSlice'
 
 const rootReducer = combineReducers({
-	students: studentsReducer,
+	pokemon: pokemonReducer,
 	search: searchReducer
 })
 

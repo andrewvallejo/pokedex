@@ -2,15 +2,18 @@ import {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {Navigate} from 'react-router-dom'
 import {Route, Routes} from 'react-router-dom'
-import {fetchStudents} from './api/studentApi'
-import {StudentPage} from './features/students/StudentPage'
+import {fetchPokemon} from './app/features/pokemon/pokemonThunk'
+import {Home} from './components/Home'
 
 export const App = () => {
 	const dispatch = useDispatch()
 
+	// TODO: [] Fix + sign size
+	// TODO: [] Fix double scroll bars on app
+
 	useEffect(
 		() => {
-			dispatch(fetchStudents())
+			dispatch(fetchPokemon())
 		},
 		[dispatch]
 	)
@@ -18,7 +21,7 @@ export const App = () => {
 	return (
 		<main className='h-screen flex flex-col bg-gray-100 justify-center items-center'>
 			<Routes>
-				<Route path='/' element={<StudentPage />} />
+				<Route path='/' element={<Home />} />
 				<Route path='*' element={<Navigate to='/' />} />
 			</Routes>
 		</main>

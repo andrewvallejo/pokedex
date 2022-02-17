@@ -1,8 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {fetchPokemon} from '../../api/pokemonApi'
+import {fetchPokemon} from './pokemonThunk'
 
 const pokemonSlice = createSlice({
-	name: 'pokemonList',
+	name: 'pokemon',
 	initialState: {
 		loading: 'idle',
 		pokedex: []
