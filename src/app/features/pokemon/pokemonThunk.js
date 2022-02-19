@@ -6,7 +6,6 @@ export const fetchPokemon = createAsyncThunk('pokemon/fetchPokemon', async () =>
 	return data.results.map((pokemon) => {
 		const {name, url} = pokemon
 		const id = url.split('/').splice(-2, 1)[0]
-		console.log(id)
 		return {
 			id: id,
 			name: name,
