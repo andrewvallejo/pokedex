@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {setSearchTerm} from './searchSlice'
 
 export const SearchBar = ({field}) => {
-	const {searchTerms} = useSelector((state) => state.reducer.search)
+	const {searchTerms} = useSelector((state) => state.search)
 	const dispatch = useDispatch()
 
 	const handleChange = (e) => {

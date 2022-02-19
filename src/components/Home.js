@@ -7,8 +7,8 @@ import {List} from './pokedex/List'
 export const Home = () => {
 	const [loadedPokedex, setLoadedPokedex] = useState([])
 	const [isLoaded, setLoaded] = useState(false)
-	const {pokedex} = useSelector((state) => state.reducer.pokemon)
-	const {searchTerms} = useSelector((state) => state.reducer.search)
+	const {pokedex} = useSelector((state) => state.pokemon)
+	const {searchTerms} = useSelector((state) => state.search)
 	const nameQuery = searchTerms.name.query
 	const tagQuery = searchTerms.tags.query
 
@@ -51,7 +51,6 @@ export const Home = () => {
 				<SearchBar field='tags' />
 				<SearchBar field='name' />
 			</nav>
-			{console.log(loadedPokedex)}
 			{isLoaded ? <List list={loadedPokedex} type='pokemon' /> : <List list={loadedPokedex} type='loader' />}
 		</section>
 	)
