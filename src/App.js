@@ -1,7 +1,6 @@
 import {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
-import {Navigate} from 'react-router-dom'
-import {Route, Routes} from 'react-router-dom'
+import {Navigate, Route, Routes} from 'react-router-dom'
 import {fetchPokemon} from './app/features/pokemon/pokemonThunk'
 import {Home} from './components/Home'
 
