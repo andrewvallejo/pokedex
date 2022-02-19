@@ -3,10 +3,13 @@ import {useDispatch} from 'react-redux'
 
 import {Tag} from '../../../components/pokedex/Tag'
 import {TestScores} from '../../../components/pokedex/TestScores'
+import {useGetPokemonByNameQuery} from '../../services/pokemonApi'
 
 import {setPokemonTags} from './pokemonSlice'
 
 export const Pokemon = ({pokemon}) => {
+	const {data, isLoading, isError} = useGetPokemonByNameQuery(pokemon.name)
+
 	const [isShowTestScores, setShowTestScores] = useState(false)
 	const [tags, setTags] = useState([])
 	const [tag, setTag] = useState('')
@@ -21,7 +24,7 @@ export const Pokemon = ({pokemon}) => {
 				setTags(pokemonTags)
 			}
 		},
-		[pokemonTags, tags]
+		[data, pokemon.name, pokemonTags, tags]
 	)
 
 	const handleChange = (e) => {
@@ -30,6 +33,14 @@ export const Pokemon = ({pokemon}) => {
 
 	const handleToggle = () => {
 		setShowTestScores(!isShowTestScores)
+	}
+
+	if (isLoading) {
+		return <div>Loading...</div>
+	}
+
+	if (isError) {
+		return <div>Error</div>
 	}
 
 	const handleAddTag = (event) => {
@@ -46,11 +57,11 @@ export const Pokemon = ({pokemon}) => {
 	return (
 		<li className='flex flex-col py-4 px-4 w-full snap-bottom' cy-data={`pokemon-${pokemon.id}`}>
 			<div className='flex flex-row w-full flex-wrap relative'>
-				{pokemon.pic ? (
+				{!isLoading ? (
 					<img
 						className='rounded-full border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
-						src={pokemon.pic}
-						alt={pokemon.firstName}
+						src={data.sprite}
+						alt={pokemon.name}
 					/>
 				) : (
 					<div className='rounded-full animate-pulse border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
@@ -59,8 +70,8 @@ export const Pokemon = ({pokemon}) => {
 					<div className='px-5 flex-col'>
 						<h2 className='px-3 md:px-0 font-bold uppercase text-2xl md:text-4xl'>{pokemon.name}</h2>
 						<div className='py-2 px-5'>
-							<h3>Email: {pokemon.email}</h3>
-							<h3>Company: {pokemon.company}</h3>
+							<h3>Weight: {data.weight}</h3>
+							<h3>Height: {data.height}</h3>
 							<h3>Skill: {pokemon.skill}</h3>
 							<h3 className='flex'>Average: {pokemon.average}%</h3>
 							{pokemonTags && (
