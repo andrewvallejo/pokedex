@@ -72,16 +72,15 @@ export const Pokemon = ({pokemon}) => {
 						<div className='py-2 px-5'>
 							<h3>Weight: {data.weight}</h3>
 							<h3>Height: {data.height}</h3>
-							<h3>Skill: {pokemon.skill}</h3>
-							<h3 className='flex'>Average: {pokemon.average}%</h3>
+							<h3>Type: {data.types.map(({type}) => type).join(', ')}</h3>
 							{pokemonTags && (
 								<ul className='flex'>{tags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
 							)}
 							<form onSubmit={handleAddTag}>
 								<input
-									className='max-w-1/2 h-12 p-1 text-md border-b-2 border-b-gray-100 focus:outline-none focus:border-b-black'
+									className='bg-clr-ii max-w-1/2 h-12 p-1 text-md border-b-2  border-b-gray-100 focus:outline-none focus:border-b-black '
 									type='text'
-									placeholder='Add a tag'
+									placeholder='Add a team tag'
 									value={tag}
 									onChange={handleChange}
 								/>
