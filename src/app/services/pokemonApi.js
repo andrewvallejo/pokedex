@@ -9,12 +9,26 @@ export const pokemonApi = createApi({
 		getPokemonByName: builder.query({
 			query: (name) => `pokemon/${name}`,
 			transformResponse: (data) => {
-				const {name, height, weight, sprites} = data
+				const {name, height, weight, sprites, stats, types} = data
+				const statistic = stats.map((stat) => {
+					return {
+						name: stat.stat.name,
+						value: stat.base_stat
+					}
+				})
+				const pokemonTypes = types.map(({type}) => {
+					return {
+						type: type.name
+					}
+				})
+
 				return {
 					name: name,
 					height: height,
 					weight: weight,
-					sprite: sprites.front_default
+					sprite: sprites.front_default,
+					stats: statistic,
+					types: pokemonTypes
 				}
 			}
 		})
