@@ -55,17 +55,19 @@ export const Pokemon = ({pokemon}) => {
 	}
 
 	return (
-		<li className='flex flex-col py-4 px-4 w-full snap-bottom' cy-data={`pokemon-${pokemon.id}`}>
-			<div className='flex flex-row w-full flex-wrap relative'>
+		<li className='flex flex-col py-4 px-4 w-full snap-bottom ' cy-data={`pokemon-${pokemon.id}`}>
+
+			<section className='flex flex-row w-full flex-wrap relative'>
+			<article className='flex flex-wrap bg-clr-iii shadow-md  rounded rounded-bl-3xl p-2 min-w-1/2 '>
 				{!isLoading ? (
 					<img
-						className='rounded-full border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
-						src={data.sprite}
-						alt={pokemon.name}
+					className='rounded-full shadow-md  bg-clr-ii border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
+					src={data.sprite}
+					alt={pokemon.name}
 					/>
-				) : (
-					<div className='rounded-full animate-pulse border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
-				)}
+					) : (
+						<div className='rounded-full animate-pulse border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
+						)}
 				<div>
 					<div className='px-5 flex-col'>
 						<h2 className='px-3 md:px-0 font-bold uppercase text-2xl md:text-4xl'>{pokemon.name}</h2>
@@ -75,7 +77,7 @@ export const Pokemon = ({pokemon}) => {
 							<h3>Type: {data.types.map(({type}) => type).join(', ')}</h3>
 							{pokemonTags && (
 								<ul className='flex'>{tags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
-							)}
+								)}
 							<form onSubmit={handleAddTag}>
 								<input
 									className='bg-clr-ii max-w-1/2 h-12 p-1 text-md border-b-2  border-b-gray-100 focus:outline-none focus:border-b-black '
@@ -83,7 +85,7 @@ export const Pokemon = ({pokemon}) => {
 									placeholder='Add a team tag'
 									value={tag}
 									onChange={handleChange}
-								/>
+									/>
 							</form>
 							<ul className='flex flex-col pt-2' data-cy='testscores-list'>
 								{isShowTestScores && <TestScores name={pokemon.name} grades={pokemon.grades} />}
@@ -98,7 +100,8 @@ export const Pokemon = ({pokemon}) => {
 						{isShowTestScores ? '-' : '+'}
 					</button>
 				</div>
-			</div>
+							</article>
+			</section>
 		</li>
 	)
 }

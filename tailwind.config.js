@@ -5,16 +5,21 @@ module.exports = {
 			body: ['Raleway', 'sans-serif']
 		},
 		colors: {
-			red: '#ff0000',
+			clr: {
+				i: 'hsl(173, 65%, 70%)',
+				ii: 'hsl(153, 28%, 85%)',
+				iii: 'hsl(9, 52%, 65%)',
+				iiii: 'hsl(341, 35%, 43%)',
+				iiiii: 'hsl(48, 93%, 63%)',
+				iiiiii: 'hsl(207, 83%, 61%)'
+			},
+			red: {
+				i: 'hsl(352, 85%, 57%)',
+				ii: 'hsl(346, 58%, 45%)',
+				iii: 'hsl(282, 55%, 22%)',
+			},
 			white: '#fff',
 			black: '#000',
-			clr: {
-				i: 'hsla(173, 65%, 70%, 1)',
-				ii: 'hsla(153, 28%, 85%, 1)',
-				iii: 'hsla(9, 52%, 65%, 1)',
-				iv: 'hsla(341, 35%, 43%, 1)',
-				v: 'hsla(48, 93%, 63%, 1)'
-			},
 			gray: {
 				100: '#ededed',
 				200: '#a0a0a0'

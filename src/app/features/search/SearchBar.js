@@ -10,9 +10,9 @@ export const SearchBar = ({field}) => {
 	}
 
 	return (
-		<div className='flex flex-col mx-2 justify-center items-center border-b-2  border-b-gray-100 sm:hover:border-b-black'>
+		<div className='flex flex-col text-white w-full md:w-1/2 overflow-auto shadow-lg justify-center items-center border-b-2 border-b-red-i round-tr-br border-r-red-i  border-l-0 border-t-0 border-r-2 sm:hover:border-clr-iii'>
 			<input
-				className='w-full bg-clr-ii h-12 p-1 text-lg sm:hover:placeholder-black focus:outline-none focus:placehholder-black '
+				className='w-full bg-red-ii h-12 p-1 text-lg placeholder-clr-ii sm:hover:placeholder-clr-iii focus:outline-none'
 				type='text'
 				placeholder={`Search by ${field}`}
 				value={searchTerms[field].value}
