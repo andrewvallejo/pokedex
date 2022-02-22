@@ -56,8 +56,8 @@ export const Pokemon = ({pokemon}) => {
 
 	return (
 		<li className='py-4 px-4 w-full  snap-bottom ' cy-data={`pokemon-${pokemon.id}`}>
-			<section className=' w-full flex-row   relative'>
-				<article className='flex justify-between bg-clr-iii shadow-md  rounded rounded-bl-3xl p-2  '>
+			<section className=' w-full flex-row flex-wrap break-all  relative'>
+				<article className='flex justify-between  bg-clr-iii shadow-md   rounded rounded-bl-3xl p-2  '>
 					<div className='flex'>
 
 					{!isLoading ? (
@@ -70,8 +70,8 @@ export const Pokemon = ({pokemon}) => {
 							<div className='rounded-full animate-pulse border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
 							)}
 					<div>
-						<div className='px-5 flex-col'>
-							<h2 className='px-3 md:px-0 font-bold uppercase text-2xl md:text-4xl'>{pokemon.name}</h2>
+						<div className='px-5 flex-col '>
+							<h2 className='px-3 w-full  md:px-0 font-bold uppercase text-2xl md:text-4xl'>{pokemon.name}</h2>
 							<div className='py-2 px-5'>
 								<h3>Weight: {data.weight}</h3>
 								<h3>Height: {data.height}</h3>
@@ -95,9 +95,9 @@ export const Pokemon = ({pokemon}) => {
 						</div>
 					</div>
 										</div>
-					<div className='  flex flex-row-reverse mt-2 md:mt-0  items-start'>
+					<div className='pb-4 md:mt-2 lg:mt-0 flex flex-col   items-start'>
 						<button
-							className=' text-9xl md:text-8xl text-clr-black sm:hover:text-clr-iiiii'
+							className='text-8xl text-clr-black   sm:hover:text-clr-iiiii'
 							onClick={handleToggle}>
 							{isShowTestScores ? '-' : '+'}
 						</button>
