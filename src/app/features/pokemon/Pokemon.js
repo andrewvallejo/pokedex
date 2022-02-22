@@ -55,52 +55,54 @@ export const Pokemon = ({pokemon}) => {
 	}
 
 	return (
-		<li className='flex flex-col py-4 px-4 w-full snap-bottom ' cy-data={`pokemon-${pokemon.id}`}>
+		<li className='py-4 px-4 w-full  snap-bottom ' cy-data={`pokemon-${pokemon.id}`}>
+			<section className=' w-full flex-row   relative'>
+				<article className='flex justify-between bg-clr-iii shadow-md  rounded rounded-bl-3xl p-2  '>
+					<div className='flex'>
 
-			<section className='flex flex-row w-full flex-wrap relative'>
-			<article className='flex flex-wrap bg-clr-iii shadow-md  rounded rounded-bl-3xl p-2 min-w-1/2 '>
-				{!isLoading ? (
-					<img
-					className='rounded-full shadow-md  bg-clr-ii border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
-					src={data.sprite}
-					alt={pokemon.name}
-					/>
-					) : (
-						<div className='rounded-full animate-pulse border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
-						)}
-				<div>
-					<div className='px-5 flex-col'>
-						<h2 className='px-3 md:px-0 font-bold uppercase text-2xl md:text-4xl'>{pokemon.name}</h2>
-						<div className='py-2 px-5'>
-							<h3>Weight: {data.weight}</h3>
-							<h3>Height: {data.height}</h3>
-							<h3>Type: {data.types.map(({type}) => type).join(', ')}</h3>
-							{pokemonTags && (
-								<ul className='flex'>{tags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
-								)}
-							<form onSubmit={handleAddTag}>
-								<input
-									className='bg-clr-ii max-w-1/2 h-12 p-1 text-md border-b-2  border-b-gray-100 focus:outline-none focus:border-b-black '
-									type='text'
-									placeholder='Add a team tag'
-									value={tag}
-									onChange={handleChange}
-									/>
-							</form>
-							<ul className='flex flex-col pt-2' data-cy='testscores-list'>
-								{isShowTestScores && <TestScores name={pokemon.name} grades={pokemon.grades} />}
-							</ul>
+					{!isLoading ? (
+						<img
+						className='rounded-full shadow-md  bg-clr-ii border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
+						src={data.sprite}
+						alt={pokemon.name}
+						/>
+						) : (
+							<div className='rounded-full animate-pulse border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
+							)}
+					<div>
+						<div className='px-5 flex-col'>
+							<h2 className='px-3 md:px-0 font-bold uppercase text-2xl md:text-4xl'>{pokemon.name}</h2>
+							<div className='py-2 px-5'>
+								<h3>Weight: {data.weight}</h3>
+								<h3>Height: {data.height}</h3>
+								<h3>Type: {data.types.map(({type}) => type).join(', ')}</h3>
+								{pokemonTags && (
+									<ul className='flex'>{tags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
+									)}
+								<form onSubmit={handleAddTag}>
+									<input
+										className='bg-clr-ii   h-12 p-1 text-md border-b-2  border-b-gray-100 focus:outline-none focus:border-b-black '
+										type='text'
+										placeholder='Add a team tag'
+										value={tag}
+										onChange={handleChange}
+										/>
+								</form>
+								<ul className='flex flex-col pt-2' data-cy='testscores-list'>
+									{isShowTestScores && <TestScores name={pokemon.name} grades={pokemon.grades} />}
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className='flex flex-1 flex-row-reverse'>
-					<button
-						className='absolute -top-10 md:top-0 text-9xl md:text-8xl text-gray-200 sm:hover:text-black'
-						onClick={handleToggle}>
-						{isShowTestScores ? '-' : '+'}
-					</button>
-				</div>
-							</article>
+										</div>
+					<div className='  flex flex-row-reverse mt-2 md:mt-0  items-start'>
+						<button
+							className=' text-9xl md:text-8xl text-clr-black sm:hover:text-clr-iiiii'
+							onClick={handleToggle}>
+							{isShowTestScores ? '-' : '+'}
+						</button>
+					</div>
+				</article>
 			</section>
 		</li>
 	)
