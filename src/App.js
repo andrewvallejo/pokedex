@@ -18,7 +18,7 @@ export const App = () => {
 	)
 
 	return (
-		<main className='h-screen flex flex-col bg-gray-100 overflow-hidden justify-center items-center'>
+		<main className='flex flex-col items-center justify-center h-screen overflow-hidden bg-gray-100'>
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route path='*' element={<Navigate to='/' />} />

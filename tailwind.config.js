@@ -16,7 +16,7 @@ module.exports = {
 			red: {
 				i: 'hsl(352, 85%, 57%)',
 				ii: 'hsl(346, 58%, 45%)',
-				iii: 'hsl(282, 55%, 22%)',
+				iii: 'hsl(282, 55%, 22%)'
 			},
 			white: '#fff',
 			black: '#000',

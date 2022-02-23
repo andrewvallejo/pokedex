@@ -6,10 +6,12 @@ export const List = ({list, type}) => {
 	}
 
 	return (
-		<ul className='divide-y divide-red-i overflow-y-scroll min-h-full  z-10 snap-x relative' data-cy={`list-${type}`}>
+		<ul
+			className='relative z-10 min-h-full overflow-y-scroll divide-y divide-red-i snap-x'
+			data-cy={`list-${type}`}>
 			{selections[type]}
 			{!list.length && (
-				<p className='text-center text-5xl text-gray-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+				<p className='absolute text-5xl text-center text-gray-500 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
 					No pokemon found
 				</p>
 			)}

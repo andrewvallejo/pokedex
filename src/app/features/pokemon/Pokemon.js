@@ -55,49 +55,52 @@ export const Pokemon = ({pokemon}) => {
 	}
 
 	return (
-		<li className='py-4 px-4 w-full  snap-bottom ' cy-data={`pokemon-${pokemon.id}`}>
-			<section className=' w-full flex-row flex-wrap break-all  relative'>
-				<article className='flex justify-between  bg-clr-iii shadow-md   rounded rounded-bl-3xl p-2  '>
+		<li className='w-full px-4 py-4 snap-bottom ' cy-data={`pokemon-${pokemon.id}`}>
+			<section className='relative flex-row flex-wrap w-full break-all '>
+				<article className='flex justify-between p-2 rounded shadow-md bg-clr-iii rounded-bl-3xl '>
 					<div className='flex'>
-
-					{!isLoading ? (
-						<img
-						className='rounded-full shadow-md  bg-clr-ii border w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0'
-						src={data.sprite}
-						alt={pokemon.name}
-						/>
+						{!isLoading ? (
+							<img
+								className='w-40 h-40 mx-auto my-2 border rounded-full shadow-md bg-clr-ii md:w-32 md:h-32 align-self-center md:mx-0 md:my-0'
+								src={data.sprite}
+								alt={pokemon.name}
+							/>
 						) : (
-							<div className='rounded-full animate-pulse border background-gray-100 w-40 h-40 md:w-32 md:h-32 align-self-center mx-auto my-2 md:mx-0 md:my-0' />
-							)}
-					<div>
-						<div className='px-5 flex-col '>
-							<h2 className='px-3 w-full  md:px-0 font-bold uppercase text-2xl md:text-4xl'>{pokemon.name}</h2>
-							<div className='py-2 px-5'>
-								<h3>Weight: {data.weight}</h3>
-								<h3>Height: {data.height}</h3>
-								<h3>Type: {data.types.map(({type}) => type).join(', ')}</h3>
-								{pokemonTags && (
-									<ul className='flex'>{tags.map((tag) => <Tag key={tag} characters={tag} />)}</ul>
+							<div className='w-40 h-40 mx-auto my-2 border rounded-full animate-pulse background-gray-100 md:w-32 md:h-32 align-self-center md:mx-0 md:my-0' />
+						)}
+						<div>
+							<div className='flex-col px-5 '>
+								<h2 className='w-full px-3 text-2xl font-bold uppercase md:px-0 md:text-4xl'>
+									{pokemon.name}
+								</h2>
+								<div className='px-5 py-2'>
+									<h3>Weight: {data.weight}</h3>
+									<h3>Height: {data.height}</h3>
+									<h3>Type: {data.types.map(({type}) => type).join(', ')}</h3>
+									{pokemonTags && (
+										<ul className='flex'>
+											{tags.map((tag) => <Tag key={tag} characters={tag} />)}
+										</ul>
 									)}
-								<form onSubmit={handleAddTag}>
-									<input
-										className='bg-clr-ii   h-12 p-1 text-md border-b-2  border-b-gray-100 focus:outline-none focus:border-b-black '
-										type='text'
-										placeholder='Add a team tag'
-										value={tag}
-										onChange={handleChange}
+									<form onSubmit={handleAddTag}>
+										<input
+											className='h-12 p-1 border-b-2 bg-clr-ii text-md border-b-gray-100 focus:outline-none focus:border-b-black '
+											type='text'
+											placeholder='Add a team tag'
+											value={tag}
+											onChange={handleChange}
 										/>
-								</form>
-								<ul className='flex flex-col pt-2' data-cy='testscores-list'>
-									{isShowTestScores && <TestScores name={pokemon.name} grades={pokemon.grades} />}
-								</ul>
+									</form>
+									<ul className='flex flex-col pt-2' data-cy='testscores-list'>
+										{isShowTestScores && <TestScores name={pokemon.name} grades={pokemon.grades} />}
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
-										</div>
-					<div className='pb-4 md:mt-2 lg:mt-0 flex flex-col   items-start'>
+					<div className='flex flex-col items-start pb-4 md:mt-2 lg:mt-0'>
 						<button
-							className='text-8xl text-clr-black   sm:hover:text-clr-iiiii'
+							className='text-8xl text-clr-black sm:hover:text-clr-iiiii sm:hover:rotate-45'
 							onClick={handleToggle}>
 							{isShowTestScores ? '-' : '+'}
 						</button>
