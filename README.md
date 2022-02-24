@@ -71,7 +71,7 @@ npm install
 
 ## Usage
 
-You can either visit [Phasebook](https://phasebook.netlify.app/) or run the command
+You can either visit [the pokedex application](https://p-o-k-e-dex.netlify.app/) or run the command
 
 ```jsx
 npm start
