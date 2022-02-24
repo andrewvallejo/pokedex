@@ -1,4 +1,8 @@
 export const FakeController = () => {
+	const handleRedirect = () => {
+		window.open('https://www.github.com/andrewvallejo/pokedex')
+	}
+
 	return (
 		<aside className='flex flex-col fixed h-full w-3/4 lg:w-full scale-[0.85] py-10 rounded-tr-[10rem]  justify-around'>
 			<div className='p-4  h-4/5 w-2/5 rounded-tr-[10rem]  bg-clr-iiii border-4 rounded border-b-red-i b
@@ -59,7 +63,10 @@ export const FakeController = () => {
 						</p>
 					</div>
 					<div className='flex items-center justify-between w-full shadow-inner '>
-						<div className='w-10 h-10 border border-black rounded-full shadow-inner bg-red-i' />
+						<button
+							className='w-10 h-10 border border-black rounded-full shadow-inner bg-red-i'
+							onClick={handleRedirect}
+						/>
 						<div className='opacity-75'>
 							<div className='w-24 h-2 mb-2 bg-gray-200 rounded ' />
 							<div className='w-24 h-2 mb-2 bg-gray-200 rounded ' />
