@@ -8,11 +8,17 @@
 
 # Pokedex
 
-</div>
-
 This is a reskin of a [previous project](https://github.com/andrewvallejo/phasebook) to make it my own.
+    
+    
 
 
+
+<img width="721" alt="Pokedex demo" src="https://user-images.githubusercontent.com/17935770/155577198-d863755f-985c-46cf-9e39-9289d7d30f83.png">
+
+ </div>
+
+    
 <details>
     <summary>previous Project Details</summary>
 
