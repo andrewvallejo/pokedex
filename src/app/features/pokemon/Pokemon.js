@@ -84,7 +84,7 @@ export const Pokemon = ({pokemon}) => {
 									)}
 									<form onSubmit={handleAddTag}>
 										<input
-											className='h-12 p-1 placeholder-gray-200 border-b-2 rounded-md text-clr-black bg-clr-ii text-md border-b-gray-100 focus:outline-none focus:border-b-clr-iiii '
+											className='w-full h-12 py-2 pl-2 mr-40 placeholder-gray-200 border-b-2 rounded-md max-w-fit text-clr-black bg-clr-ii text-md border-b-gray-100 focus:outline-none focus:border-b-clr-iiii '
 											type='text'
 											placeholder='Add a team tag'
 											value={tag}
