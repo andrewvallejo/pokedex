@@ -10,7 +10,7 @@
 
 </div>
 
-This is a reskin of a  previous project to make it my own.
+This is a reskin of a [previous project](https://github.com/andrewvallejo/phasebook) to make it my own.
 
 
 <details>
@@ -96,7 +96,11 @@ npm test
 
 ## Roadmap
 
-- Every Gen
+- Add a cache to prevent refetches and renders
+- Update pokedex to look more like the original
+- Give the right side of the pokedex more functionality
+- Add open/close animation for the Pokedex
+- Add option to pick pokemon generations
 
 
 <div align='center'>
