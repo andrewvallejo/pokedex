@@ -11,16 +11,12 @@
 This is a reskin of a [previous project](https://github.com/andrewvallejo/phasebook) to make it my own.
     
     
-
-
-
-<img width="721" alt="Pokedex demo" src="https://user-images.githubusercontent.com/17935770/155577198-d863755f-985c-46cf-9e39-9289d7d30f83.png">
-
  </div>
-
+ 
+---
     
 <details>
-    <summary>previous Project Details</summary>
+    <summary>Details on the previous project</summary>
 
 <div align='center'>
 ## Frontend Tech Challenge
@@ -81,16 +77,10 @@ You can either visit [Phasebook](https://phasebook.netlify.app/) or run the comm
 npm start
 ```
 
-## Testing
 
-You can open the Cypress and run the spec by typing the command.
+## Preview
 
-```jsx
-npm test
-```
-
-## Demo
-
+<img  alt="Pokedex demo" src="https://user-images.githubusercontent.com/17935770/155577198-d863755f-985c-46cf-9e39-9289d7d30f83.png">
 
 ## Features
 
