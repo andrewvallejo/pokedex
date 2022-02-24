@@ -55,13 +55,13 @@ export const Pokemon = ({pokemon}) => {
 	}
 
 	return (
-		<li className='w-full px-4 py-4 snap-bottom ' cy-data={`pokemon-${pokemon.id}`}>
+		<li className='w-full px-4 py-4 shadow-lg snap-bottom ' cy-data={`pokemon-${pokemon.id}`}>
 			<section className='relative flex-row flex-wrap w-full break-all '>
 				<article className='flex justify-between p-2 rounded shadow-md bg-clr-iii rounded-bl-3xl '>
-					<div className='flex'>
+					<div className='flex '>
 						{!isLoading ? (
 							<img
-								className='w-40 h-40 mx-auto my-2 border rounded-full shadow-md bg-clr-ii md:w-32 md:h-32 align-self-center md:mx-0 md:my-0'
+								className='w-40 h-40 p-1 mx-auto my-2 border rounded-full shadow-md bg-clr-ii md:w-32 md:h-32 align-self-center md:mx-0 md:my-0'
 								src={data.sprite}
 								alt={pokemon.name}
 							/>
@@ -84,7 +84,7 @@ export const Pokemon = ({pokemon}) => {
 									)}
 									<form onSubmit={handleAddTag}>
 										<input
-											className='h-12 p-1 border-b-2 bg-clr-ii text-md border-b-gray-100 focus:outline-none focus:border-b-black '
+											className='h-12 p-1 placeholder-gray-200 border-b-2 rounded-md text-clr-black bg-clr-ii text-md border-b-gray-100 focus:outline-none focus:border-b-clr-iiii '
 											type='text'
 											placeholder='Add a team tag'
 											value={tag}
@@ -100,7 +100,7 @@ export const Pokemon = ({pokemon}) => {
 					</div>
 					<div className='flex flex-col items-start pb-4 md:mt-2 lg:mt-0'>
 						<button
-							className='text-8xl text-clr-black sm:hover:text-clr-iiiii sm:hover:rotate-45'
+							className='transition ease-in-out text-8xl text-clr-black sm:hover:text-clr-iiiii active:rotate-45 1s'
 							onClick={handleToggle}>
 							{isShowTestScores ? '-' : '+'}
 						</button>
