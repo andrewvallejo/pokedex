@@ -5,12 +5,12 @@ export const FakeController = () => {
 	order-l-red-i border-t-red-iii border-r-red-iii border-red-i shadow-md absolute self-center overflow'>
 				<div className='flex flex-col justify-around h-1/3 rounded-3xl'>
 					<header className='z-10 flex-row-reverse items-center justify-around hidden md:flex rounded-3xl'>
-						<div className='flex flex-col-reverse flex-wrap md:flex-row'>
-							<h1 className='px-10 py-4 text-center border-2 md:block l:ml-10 md:text-4xl bg-red-ii rounded-3xl border-clr-iiiii text-clr-iiiii'>
+						<div className='flex flex-col-reverse flex-wrap-reverse md:flex-row'>
+							<h1 className='px-10 py-4 text-4xl text-center border-2 bg-red-ii rounded-3xl border-clr-iiiii text-clr-iiiii'>
 								Poke
 								<span className='text-clr-'>dex</span>
 							</h1>
-							<div className='flex flex-row-reverse items-center justify-around mx-3 mb-2 l:flex-row'>
+							<div className='flex flex-row items-center justify-around mx-3 mb-2 l:flex-row'>
 								<div className='w-10 h-10 mr-1 border-2 border-black rounded-full bg-clr-iiiiii ' />
 								<div className='w-10 h-10 mr-1 border-2 border-black rounded-full bg-clr-iiiii' />
 								<div className='w-10 h-10 mr-1 border-2 border-black rounded-full bg-red-i' />
