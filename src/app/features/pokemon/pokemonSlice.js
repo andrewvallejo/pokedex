@@ -20,9 +20,9 @@ const pokemonSlice = createSlice({
 			}
 		},
 		setPokemonTags: (state, action) => {
+			console.log('👾: action', action)
 			const {pokemonId, tagList} = action.payload
-			const {pokemon} = state.pokemonList
-			const currentPokemon = pokemon.find((pokemon) => pokemon.id === pokemonId)
+			const currentPokemon = state.pokedex.find((pokemon) => pokemon.id === pokemonId)
 			currentPokemon.tags = tagList
 		}
 	},

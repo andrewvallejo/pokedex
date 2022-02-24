@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux'
-import {Stats} from '../../../components/pokedex/Stats'
+import {List} from '../../../components/pokedex/List'
+
 import {Tag} from '../../../components/pokedex/Tag'
 import {useGetPokemonByNameQuery} from '../../services/pokemonApi'
 import {setPokemonTags} from './pokemonSlice'
@@ -8,7 +9,7 @@ import {setPokemonTags} from './pokemonSlice'
 export const Pokemon = ({pokemon}) => {
 	const {data, isLoading, isError} = useGetPokemonByNameQuery(pokemon.name)
 
-	const [isShowTestScores, setShowTestScores] = useState(false)
+	const [isShowStats, setShowStats] = useState(false)
 	const [tags, setTags] = useState([])
 	const [tag, setTag] = useState('')
 
@@ -30,7 +31,7 @@ export const Pokemon = ({pokemon}) => {
 	}
 
 	const handleToggle = () => {
-		setShowTestScores(!isShowTestScores)
+		setShowStats(!isShowStats)
 	}
 
 	if (isLoading) {
@@ -56,7 +57,7 @@ export const Pokemon = ({pokemon}) => {
 		<li className='w-full px-2 py-4 shadow-lg snap-bottom ' cy-data={`pokemon-${pokemon.id}`}>
 			<section className='relative flex-row flex-wrap w-full break-all '>
 				<article className='flex justify-around py-3 rounded shadow-md bg-clr-iii rounded-bl-3xl '>
-					<div className='flex items-center ml-2 '>
+					<div className='flex items-start justify-start ml-2 '>
 						{!isLoading ? (
 							<img
 								className='w-40 h-40 p-1 border rounded-full shadow-md bg-clr-ii md:w-32 md:h-32 align-self-center md:mx-0 md:my-0'
@@ -90,18 +91,16 @@ export const Pokemon = ({pokemon}) => {
 											onChange={handleChange}
 										/>
 									</form>
-									<ul className='flex flex-col pt-2' data-cy='testscores-list'>
-										{isShowTestScores && <Stats name={pokemon.name} stats={pokemon.stats} />}
-									</ul>
+									{isShowStats && <List list={[pokemon.name, data.stats]} type='stats' />}
 								</div>
 							</div>
 						</div>
 					</div>
 					<div className='flex flex-col items-start pb-4 mr-2 md:mt-2 lg:mt-0'>
 						<button
-							className='transition ease-in-out text-8xl text-clr-black sm:hover:text-clr-iiiii active:rotate-45 1s'
+							className='transition ease-in-out delay-75 text-8xl text-clr-black sm:hover:text-clr-iiiii hover:rotate-45 active:scale-125 1s'
 							onClick={handleToggle}>
-							{isShowTestScores ? '-' : '+'}
+							{isShowStats ? '-' : '+'}
 						</button>
 					</div>
 				</article>
